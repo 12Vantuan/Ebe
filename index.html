@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chúc Ebe Yêu dấu Ngày 1/6 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: url('https://i.imgur.com/KjkKk9u.jpg') no-repeat center center/cover;
+      font-family: 'Comic Sans MS', cursive;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px #ff69b4;
+    }
+
+    .typewriter {
+      font-size: 1.3rem;
+      width: 80%;
+      max-width: 600px;
+      margin: 20px auto;
+      min-height: 70px;
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 12px;
+      background-color: #ff69b4;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+    }
+
+    .heart {
+      position: fixed;
+      color: #ffb6c1;
+      font-size: 24px;
+      animation: float 4s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) scale(0.5);
+        opacity: 0;
+      }
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Chúc Ebe Ngày 01/6 Vui Vẻ, Hạnh phúc nhé 🎉</h1>
+
+  <div class="typewriter" id="textEffect"></div>
+
+  <button onclick="showLove()">🎁 Nhận quà nè!</button>
+
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-littleidea.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    // Typewriter effect
+    const message = "Chúc Ebe – cô gái đáng yêu nhất của anh – có một ngày Quốc tế Thiếu nhi thật nhiều niềm vui! ❤️\nEm là niềm vui của anh mỗi ngày, là ánh nắng nhỏ chiếu sáng trong lòng anh";
+    let i = 0;
+    function typeWriter() {
+      if (i < message.length) {
+        document.getElementById("textEffect").innerHTML += message.charAt(i) === "\n" ? "<br>" : message.charAt(i);
+        i++;
+        setTimeout(typeWriter, 50);
+      }
+    }
+    typeWriter();
+
+    // Trái tim bay
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.textContent = "💖";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 15 + 15 + "px";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 4000);
+    }, 300);
+
+    // Nút nhận quà
+    function showLove() {
+      alert("Quà tặng chính là anh nè 😘\nMãi thương Ebe – cô công chúa bé bỏng của anh 💘");
+    }
+  </script>
+</body>
+</html>
